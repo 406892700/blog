@@ -104,7 +104,8 @@ const devConfig = {
     resolve: {
         extensions: ['.js', '.vue', '.json', '.jsx'],
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': path.resolve(__dirname, './client/src/js/'),
         }
     },
 };

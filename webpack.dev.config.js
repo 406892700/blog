@@ -83,7 +83,7 @@ const devConfig = {
             writeToFileEmit: true,
         }),
         // 自定义资源移动插件
-        new MoveResourcePlugins(),
+        // new MoveResourcePlugins(),
         // new webpack.DllReferencePlugin({
         //     context: __dirname,
         //     manifest: require('./dist/manifest.json'),
@@ -92,7 +92,8 @@ const devConfig = {
     resolve: {
         extensions: ['.js', '.vue', '.json', '.jsx'],
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': path.resolve(__dirname, './client/src/js/'),
         }
     },
 };

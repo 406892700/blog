@@ -3,7 +3,7 @@ const proxyMiddleware = require('http-proxy-middleware');
 const consolidate = require('consolidate');
 const path = require('path');
 const mixin = require('./server/tool/mixin');
-const Activity = require('./server/index');
+const App = require('./server/index');
 const config = require('./config/config');
 
 const app = express();
@@ -50,7 +50,6 @@ if (isDev) {
     });
 
 } else {
-    console.log('fuck!!!!!');
     // 指定静态资源文件夹
     app.use(express.static(path.join(__dirname, './dist/client')));
     app.set('views', path.resolve(__dirname, './dist/client/views'));
@@ -60,12 +59,12 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 // 主工程模块
-app.get('/', (req, res, next) => {
+app.get('/admin', (req, res, next) => {
     const contentBase = config.framework === 'vue' ? 'appVue' : 'appReact';
     mixin(res).render(contentBase, {});
 });
 
 // 活动模块
-app.use('/act', Activity);
+app.use('/', App);
 
 app.listen(3001);

@@ -1,4 +1,5 @@
-console.log('双十二活动dd333333333d  d');
+import './index.scss';
+import '@/common/common';
 
 // hmr
 if (module.hot) {

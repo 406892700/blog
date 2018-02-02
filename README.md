@@ -1,2 +1,2 @@
-# wepack-mutipage
-webpack多页应用
+# blog
+个人博客

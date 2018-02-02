@@ -3,13 +3,12 @@
  * @Author: Simple
  * @Date: 2017-11-09 11:54:30
  * @Last Modified by: Simple
- * @Last Modified time: 2017-12-20 17:40:26
+ * @Last Modified time: 2018-02-02 11:54:54
  */
 const fs = require('fs');
 const path = require('path');
 
 let commonArgs;
-
 
 const mixin = (res) => {
     return {
@@ -18,7 +17,6 @@ const mixin = (res) => {
                 try {
                     commonArgs = JSON.parse(fs.readFileSync(path.resolve('./dist/src-manifest.json')));
                 } catch (e) {
-                    console.log(e);
                     res.send('<!doctype><html><head>项目还在启动~</head><body>项目启动中...</body></html>');
                 }
             } else {
@@ -44,7 +42,6 @@ const mixin = (res) => {
                 // commonInfoJs,
             });
 
-            console.log(tempOptions);
             res.render(name, tempOptions, callback);
         },
     };
