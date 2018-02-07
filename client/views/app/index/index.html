@@ -13,7 +13,7 @@
                     <h4 class="blog-tite"><a href="/detail/<%=item.id%>"><%=item.title %></a></h4>
                     <div class="blog-date"><%=item.add_time%></div>
                     <div class="blog-preview">
-                        <%=item.content%>
+                        <%-item.content%>
                     </div>
                     <div class="blog-cover-list">
                         <% item.coversArr.forEach(function(cover, j) {%>

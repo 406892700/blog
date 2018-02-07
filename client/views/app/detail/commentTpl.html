@@ -1,0 +1,23 @@
+<% for(var i = 0; i < list.length; i ++) { %>
+    <li class="comment-item">
+        <div class="comment-avatar">
+            <div class="avatar-pic">
+                <img src="/static/images/avatar.png" alt="">
+            </div>
+            <div class="user-name">Simple</div>
+        </div>
+
+        <div class="comment-content">
+            <div class="content-word">
+                <%=list[i].content%>
+            </div>
+            <div class="content-time">
+                <%=list[i].add_time%>
+            </div>
+        </div>
+
+        <div class="comment-number">
+            <%=list[i].index%>#
+        </div>
+    </li>
+<% } %>
