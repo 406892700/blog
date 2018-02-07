@@ -59,6 +59,10 @@ const devConfig = {
                 // exclude: /^node_modules$/,
                 use: 'vue-loader',
             },
+            { // 解析 .tpl
+                test: /\.html$/,
+                loader: 'ejs-loader',
+            },
             
         ]
     },
@@ -92,6 +96,9 @@ const devConfig = {
             },
             path: 'dist',
             writeToFileEmit: true,
+        }),
+        new webpack.ProvidePlugin({
+            _: 'underscore',
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')

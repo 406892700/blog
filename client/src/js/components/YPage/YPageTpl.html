@@ -1,0 +1,13 @@
+<div class="YG-page">
+    <%for(var i = 0;i < list.length;i++){%>
+        <%if(list[i][1] == -1){%>
+            <a href="javascript:void(0)" class="disabled">...</a>
+        <%}else{%>
+            <%if(cPage == list[i][0]){%>
+                <a href="javascript:void(0)" class="active"><%=list[i][0]%></a>
+            <%}else{%>
+                <a href="javascript:void(0)" data-index="<%=list[i][1]%>"><%=list[i][0]%></a>
+            <%}%>
+        <%}%>
+    <%}%>
+</div>

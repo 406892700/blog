@@ -1,6 +1,6 @@
 const express = require('express');
-const proxyMiddleware = require('http-proxy-middleware');
-const consolidate = require('consolidate');
+// const proxyMiddleware = require('http-proxy-middleware');
+// const consolidate = require('consolidate');
 const path = require('path');
 const mixin = require('./server/tool/mixin');
 const App = require('./server/index');

@@ -1,0 +1,179 @@
+$dialog-border-radius: 0;
+$title-height: 40px;
+$title-font-size: 16px;
+$title-bg: #f5f5f5;
+$btn-color: #0078d8;
+
+@keyframes bounceIn {
+  0% {
+      opacity: 0;
+      -webkit-transform: scale(.5);
+      -ms-transform: scale(.5);
+      transform: scale(.5)
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+
+@keyframes bounceOut {
+  100% {
+      opacity: 0;
+      -webkit-transform: scale(.7);
+      -ms-transform: scale(.7);
+      transform: scale(.7)
+  }
+
+  30% {
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      transform: scale(1.05)
+  }
+
+  0% {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1)
+  }
+}
+
+.YG_bounceIn{
+   animation-name: bounceIn;
+   animation-duration: .2s;
+   animation-fill-mode: forwards;
+}
+
+.YG_bounceOut{
+  animation-name: bounceOut;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+}
+
+.YG-dialog-wrap{
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index: 999999;
+}
+
+.YG-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  z-index:9999999;
+}
+
+.YG-dialog {
+  margin: 6% auto 10%;
+  position: relative;
+  width: 600px;
+  background-color: #fff;
+  border-radius: $dialog-border-radius;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #999;
+  border: 1px solid #eee;
+  transition: all 0.3s;
+  z-index:99999999;
+
+  &.full-screen {
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    overflow-y: scroll;
+
+    .full {
+      right: 40px;
+      background-image: url(./assets/minScreen-normal.png) !important;
+      background-size: 85% 85%;
+    }
+  }
+
+  .title {
+    height: $title-height;
+    line-height: $title-height;
+    font-size: $title-font-size;
+    background-color: $title-bg;
+    padding: 0 10px;
+    text-align: left;
+  }
+
+  .option {
+    position: absolute;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: url(./assets/close_48.png) no-repeat 50% 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &.close {
+      right: 10px;
+      background-image: url(./assets/close_48.png);
+    }
+
+    &.full {
+      right: 40px;
+      background-image: url(./assets/fullScreen-normal.png);
+      background-size: 85% 85%;
+    }
+
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .btn-area {
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 50px;
+    // line-height: 50px;
+    border-top: 1px solid #eee;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    .btn {
+      display: inline-block;
+      min-width: 100px;
+      text-align: center;
+      background-color: $btn-color;
+      color: #fff;
+      line-height: 30px;
+      font-size: 14px;
+      vertical-align: middle;
+      margin: 10px 0 10px 10px;
+      text-decoration: none;
+      border-radius: 0;
+      padding: 0 10px;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

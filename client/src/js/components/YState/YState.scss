@@ -1,0 +1,62 @@
+/* YG组件 状态组件样式 */
+.YG-no-data { //没有数据样式
+  height:300px;
+  position: relative;
+
+  .no-data-area {
+    position: absolute;
+    width:200px;
+    height:80px;
+    left:50%;
+    top:50%;
+    margin:-40px -100px;
+    text-align: center;
+
+    .icon {
+      width:64px;
+      height:64px;
+      margin:0 auto;
+      background: url(./assets/commo_nodata.png) no-repeat 0 0;
+    }
+
+    .text {
+      height:30px;
+      line-height: 30px;
+      font-size: 14px;
+      color:#999;
+      margin-top: 20px;
+    }
+  }
+}
+
+.YG-loading { //加载中样式
+  position: relative;
+  height:300px;
+  width:100%;
+
+  .loading-area{
+    position: absolute;
+    height:70px;
+    width:200px;
+    left:50%;
+    top:50%;
+    margin:-35px -100px;
+    text-align: center;
+
+    .icon {
+      display: block;
+      width:32px;
+      height:32px;
+      background: url(./assets/loading.gif) no-repeat 0 0;
+      margin:0 auto;
+    }
+
+    .text {
+      height:30px;
+      line-height:30px;
+      color:#999;
+      font-size:14px;
+      margin-top: 20px;
+    }
+  }
+}

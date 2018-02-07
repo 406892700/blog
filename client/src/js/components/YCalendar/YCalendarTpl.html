@@ -1,0 +1,41 @@
+<div class="YG-calendar">
+    <div class="filter_date">
+        <a href="javascript:void(0)" class="icon icon-left prevMonth"></a>
+        <a href="javascript:void(0)" class="icon icon-right nextMonth"></a>
+        <div class="date">
+            <%=title%>
+        </div>
+    </div>
+    <div class="calendar_content">
+      <table border="1" bordercolor="#eee">
+          <thead>
+          <tr>
+              <th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% list.forEach(function(item, i) { %>
+              <% if(i % 7 === 0) { %><tr><% } %>
+              <% if(!item) {%>
+                <td></td>
+              <% } else { %>
+                <td>
+                  <% if(repayInfo[item.date]) { %>
+                    <% const repay = repayInfo[item.date];%>
+                    <% if(repay.filter(function(item) {return item.state == '10'}).length) { %>
+                      <span class="repay_done <%=item.date == today ? 'selected' : ''%>" data-date="<%=item.date%>"><%=item.text%></span>
+                    <% } else { %>
+                      <span class="not_repay <%=item.date == today ? 'selected' : ''%>" data-date="<%=item.date%>"><%=item.text%></span>
+                    <% } %>
+                  <% } else { %>
+                    <span class="<%=item.date == today ? 'selected' : ''%>" data-date="<%=item.date%>"><%=item.text%></span>
+                  <% } %>
+                  
+                </td>
+              <% } %>
+              <% if(i%7 === 6){%></tr><%}%>              
+            <% }) %>
+          </tbody>
+        </table>
+    </div>
+</div>

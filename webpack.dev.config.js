@@ -57,7 +57,10 @@ const devConfig = {
                 exclude: /^node_modules$/,
                 use: 'vue-loader',
             },
-            
+            { // 解析 .tpl
+                test: /\.html$/,
+                loader: 'ejs-loader',
+            },
         ]
     },
     // sourceMap
@@ -73,6 +76,9 @@ const devConfig = {
         new webpack.NoEmitOnErrorsPlugin(),
         // 友好错误提示插件
         new FriendlyErrorsWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            _: 'underscore',
+        }),
         // 生成manifest插件
         new ManifestPlugins({
             fileName: 'src-manifest.json',

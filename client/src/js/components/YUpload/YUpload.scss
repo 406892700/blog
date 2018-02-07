@@ -1,0 +1,101 @@
+.YG-upload {
+    margin-top: 20px;
+    text-align: left;
+
+    .btn {
+        display: inline-block;
+        background-color: #fbab3f;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 10px;
+        text-decoration: none;
+        margin-right: 10px;
+        border-radius: 3px;
+    }
+
+    .select-pic {
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+
+        .real-file-select { 
+            opacity: 0;
+            position: absolute;
+            left: -20000px;
+        }
+    }
+
+    .warm-tips {
+        font-size: 12px;
+        color: #ccc;
+        margin-top: 10px;
+    }
+
+    .inner-content {
+        overflow: hidden;
+        margin: 10px 0;
+
+        .op-area {
+            width: 300px;
+            height: 300px;
+            float: left;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+
+            img { 
+                display: block;
+                width: 100%;
+            }
+
+            .drag-zone {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 1px solid #0078d8;
+                left: 100px;
+                top: 30px;
+
+                .pointer {
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background-color: #0078d8;
+
+                    &.top {left: 50%; top: -2px; margin-left: -2px;}
+
+                    &.top-left {left: -2px; top: -2px;}
+
+                    &.top-right {right: -2px; top: -2px;}
+
+                    &.left {left: -2px; top: 50%; margin-top: -2px;}
+
+                    &.right {right: -2px; top: 50%; margin-top: -2px;}
+
+                    &.bottom {left: 50%; margin-left: -2px; bottom: -2px;}
+
+                    &.bottom-left {left: -2px; bottom: -2px;}
+
+                    &.bottom-right {right: -2px; bottom: -2px;}
+                }
+            }
+        }
+
+        .preview {
+            margin-left: 320px;
+
+            canvas {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #eee;
+            }
+        }
+    }
+
+    .inner-btn-area {
+        text-align: center;
+        margin-top: 20px;
+    }
+}

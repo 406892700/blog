@@ -1,0 +1,30 @@
+<table class="YG-table-grid" cellpadding="0">
+    <thead>
+        <tr>
+            <% if(selectable) { %>
+                <th>
+                    <input type="checkbox" class="select-all-checkbox">
+                </th>
+            <% } %>
+            <%for(var i = 0;i < title.length;i++){%>
+                <th width="<%=title[i].width%>">
+                    <%=title[i].text%>
+                </th>
+            <%}%>
+        </tr>
+    </thead>
+    <tbody>
+        <%for(var i = 0; i < list.length; i++){%>
+        <tr>
+            <% if(selectable) { %>
+                <td>
+                    <input type="checkbox" class="select-checkbox" data-obj='<%=JSON.stringify(originList[i])%>'>
+                </td>
+            <% } %>
+            <%for(var j = 0; j < list[i].length; j++){%>
+                <td><%= list[i][j].value %></td>
+            <%}%>
+        </tr>
+        <%}%>
+    </tbody>
+</table>
