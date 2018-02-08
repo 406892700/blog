@@ -1,0 +1,170 @@
+body {
+    margin:0;
+    padding:0;
+    min-width: 1200px;
+    background-color: #f1f1f1;
+}
+
+* {
+    font-size:inherit;
+    box-sizing:border-box;
+}
+
+ul, ol {
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+ul li,
+ol li {
+
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+textarea {
+    font-family: 'Microsoft Yahei';
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar { /*整体部分*/
+    width: 10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track { /*滑动轨道*/
+    background: rgba(0,0,0,0.0);
+}
+
+::-webkit-scrollbar-thumb { /*滑块*/
+    border-radius: 5px;
+    background: rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover { /*滑块效果*/
+    border-radius: 5px;
+    background: rgba(0,0,0,0.4);
+}
+
+/*
+ * 布局架构样式
+ */
+
+ /* app主容器 */
+.app-wrapper{
+
+}
+
+/* 顶部导航栏容器 */
+.app-top-bar{
+
+}
+
+/* 主内容区容器 */
+.app-container{
+  position: absolute;
+  top: 70px;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+  /*background-color: #324157;*/
+  overflow: hidden;
+
+}
+
+.app-left-bar{
+  width: 240px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #324157;
+  overflow-y: scroll;
+}
+
+.app-content{
+  position: absolute;
+  left: 240px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-left: 20px solid #f1f1f1;
+  border-right: 20px solid #f1f1f1;
+  overflow-y: scroll;
+}
+
+.app-content .inner-content{
+  padding: 0 20px;
+  min-height: 600px;
+}
+
+.app-single-page{
+
+}
+
+.app-filter-form{
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.app-list-bar{
+}
+
+.app-list-table{
+  margin-top: 10px;
+}
+
+.app-list-pagination{
+  margin-top: 10px;
+  text-align: right;
+}
+
+.app-name-wrapper{
+  display: inline-block;
+  margin: 4px 4px;
+}
+
+.app-sub-title{
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  /*border-left: 4px solid #20a0ff;*/
+  border-bottom: 1px solid #eee;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.app-form-section{
+  margin-bottom: 20px;
+  padding: 20px 20px;
+}
+
+.app-form-section .app-form-item{
+  margin-top: 10px;
+}
+
+.app-form-section .app-form-item .el-form-item__error{
+  box-shadow: 0 0 5px #eee;
+  padding: 5px;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.app-form-section .app-form-item .el-form-item{
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.app-form-section .app-form-item.combine{
+  padding-left: 20px;
+}

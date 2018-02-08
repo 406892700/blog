@@ -3,10 +3,10 @@ const express = require('express');
 // const consolidate = require('consolidate');
 const path = require('path');
 const mixin = require('./server/tool/mixin');
-const App = require('./server/index');
 const config = require('./config/config');
 
 const app = express();
+const App = require('./server/index')(app);
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -46,7 +46,7 @@ if (isDev) {
     
     devMiddleware.waitUntilValid(() => {
         console.log('构建开始...');
-        opn('http://localhost:3001');
+        // opn('http://localhost:3001');
     });
 
 } else {
@@ -66,5 +66,9 @@ app.get('/admin', (req, res, next) => {
 
 // 活动模块
 app.use('/', App);
+
+process.on('uncaughtException', (err) => {
+    console.log(err);
+});
 
 app.listen(3001);

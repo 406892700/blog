@@ -20,23 +20,15 @@
     </el-row>
     <div class="app-container">
       <div class="app-left-bar">
-        <el-menu default-active="2" class="el-menu-vertical-demo" theme="dark">
-          <el-submenu index="1">
-            <template slot="title">导航一</template>
-            <el-menu-item-group title="分组一">
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
+        <el-menu default-active="2" class="el-menu-vertical-demo" theme="dark" @select="select">
+          <el-submenu :index="index+''" v-for="(item, index) in router">
+            <template slot="title">{{item.meta.title}}</template>
+            <el-menu-item-group>
+              <el-menu-item :index="`${item.path}/${innerItem.path}$$${innerItem.meta.title}`" v-for="(innerItem, innerIndex) in item.children">
+                  {{innerItem.meta.title}}
+              </el-menu-item>
             </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
           </el-submenu>
-          <el-menu-item index="2">导航二</el-menu-item>
-          <el-menu-item index="3">导航三</el-menu-item>
         </el-menu>
       </div>
       <div class="app-content">
@@ -55,11 +47,13 @@
 /**
  * 版权信息
  */
-import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
+import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
+import router from '../../router/router';
 export default {
   name: 'index',
   data() {
     return {
+        router
     }
   },
   created(){
@@ -77,6 +71,7 @@ export default {
       userInfo: state => state.userInfo,
       // leftMenu: state=> state.leftMenu.length ? state.leftMenu[0].subMenu : []//根目录不计算在内
     }),
+    
   },
 
   methods: {
@@ -90,7 +85,7 @@ export default {
     //tab点击
     handleClick(tab, event) {
       this.setActive(tab.$attrs.index+'');
-      this.$router.push({path: tab.$attrs.path})
+      this.$router.push({path: tab.$attrs.path});
     },
     //tab移除
     handleRemove(index){
@@ -115,7 +110,6 @@ export default {
      * 选中的情况
      */
     select(path){
-      //debugger;
       let arr = path.split('$$');
       path = {
         title: arr[1],
@@ -138,15 +132,5 @@ export default {
 </script>
 
 <style lang="scss" scoped type="text/css">
-  .b {
-    background-color: #eee;
-    display: block;
-    height: 100px;
 
-    .a {
-      height: 50px;
-      background-color: #d00000;
-      color: #fff;
-    }
-  }
 </style>

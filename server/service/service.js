@@ -52,10 +52,10 @@ const getArticleDetail = (id, callback) => {
  * @param {* 页面大小} pageSize 
  * @param {* 回调函数} callback 
  */
-const getComments = (id, page, pageSize, callback) => {
+const getCommentsListByAid = (id, page, pageSize, callback) => {
     pool().then((connection) => {
         ASYNC(function *gen(cb) {
-            const result1 = yield connection.query(`select count(*) as total from t_comment`, cb);
+            const result1 = yield connection.query(`select count(*) as total from t_comment where aId = ${id}`, cb);
             const result2 = yield connection.query(`select * from t_comment where aId = ${id} LIMIT ${pageSize} OFFSET ${(page-1)*pageSize}`, cb);
         
             connection.release();
@@ -72,5 +72,5 @@ const getComments = (id, page, pageSize, callback) => {
 module.exports = {
     getArticleList,
     getArticleDetail,
-    getComments
+    getCommentsListByAid
 };

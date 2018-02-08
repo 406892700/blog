@@ -45,13 +45,14 @@ router.get('/comment/:id/:page', (req, res) => {
     const page = req.params.page;
     const pageSize = req.query.pageSize || 5;
 
-    service.getComments(id, page, pageSize, (result, total) => {
+    service.getCommentsListByAid(id, page, pageSize, (result, total) => {
         const totalPage = Math.ceil(total / pageSize);
 
         res.json({
             list: result,
             totalPage,
-            page
+            page,
+            pageSize
         });
     });
 
@@ -64,4 +65,14 @@ router.get('/gallery', (req, res) => {
     mixin(res).render('app/gallery', {});
 });
 
-module.exports = router;
+module.exports = (app) => {
+    app.use(/^\/api(\/)?(.)*/, require('./tool/interceptor'));
+    app.use('/api', require('./admin'));
+    app.use((error, req, res, next) => {
+        res.json({
+            msg: '错啦！'
+        });
+    });
+
+    return router;
+};

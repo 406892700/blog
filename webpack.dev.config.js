@@ -21,7 +21,7 @@ const devConfig = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
                 use: 'url-loader?limit=8192&context=client&name=[path][name].[ext]',
             },
             {
