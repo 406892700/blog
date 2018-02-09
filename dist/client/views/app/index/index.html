@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../template/head.html')%>
+    <title>simple</title>
+</head>
+<body>
+    <%- include('../../template/header.html')%>
+    <div class="index-page">
+        <ol class="blog-list">
+            <% list.forEach(function(item, i) { %>
+                <li class="blog-item">
+                    <h4 class="blog-tite"><a href="/detail/<%=item.id%>"><%=item.title %></a></h4>
+                    <div class="blog-date"><%=item.add_time%></div>
+                    <div class="blog-preview">
+                        <%-item.content%>
+                    </div>
+                    <div class="blog-cover-list">
+                        <% item.coversArr.forEach(function(cover, j) {%>
+                            <a href="javascript:void(0)" class="cover">
+                                <div class="inner-cover">
+                                    <img src="<%=cover%>" alt="">
+                                </div>
+                            </a>
+                        <% }) %>
+                    </div>
+                </li>
+            <% }) %>
+        </ol>
+
+        <div class="SIMPLE-page-ctrl">
+            <% for (var i = 1; i <= totalPage; i++) {%>
+                <a href="/?page=<%=i%>" class="<%=i == page ? 'active' : ''%>"><%=i%></a>
+            <% } %>
+        </div>
+    </div>
+    <%- include('../../template/foot.html')%>
+</body>
+</html>

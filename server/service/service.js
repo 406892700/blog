@@ -12,13 +12,13 @@ const getArticleList = (page, pageSize, callback) => {
         ASYNC(function *gen(cb) {
             const result1 = yield connection.query(`select count(*) as total from t_article`, cb);
             const result2 = yield connection.query(`select * from t_article LIMIT ${pageSize} OFFSET ${(page-1)*pageSize}`, cb);
-        
             connection.release();
 
             if (result1[0] || result2[0]) {
                 throw result1[0] || result2[0];
             } else {
                 callback(result2[1], result1[1][0].total);
+                
             }
 
         });

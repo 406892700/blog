@@ -1,0 +1,1 @@
+webpackJsonp([12],{281:function(e,n){},296:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var c=t(281);t.n(c);document.write("欢迎来到活动工程！")}},[296]);

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../template/head.html')%>
+    <title>simple</title>
+</head>
+<body>
+    <%- include('../../template/header.html')%>
+    
+    <div class="detail-page">
+        <div class="detail-article">
+            <h4 class="detail-title"><%=result.title%></h4>
+            <div class="detail-date">
+                <%=result.add_time%>
+            </div>
+            <div class="detail-content">
+                <%-result.content%>
+            </div>
+        </div>
+
+        <div class="SIMPLE-comment">
+            <ol id="commentList">
+            </ol>
+
+            <div class="SIMPLE-page-ctrl" id="pageCtrl">
+                
+            </div>
+        </div>
+    </div>
+    <%- include('../../template/foot.html')%>
+</body>
+</html>

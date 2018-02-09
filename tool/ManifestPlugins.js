@@ -3,7 +3,7 @@
  * @Author: Simple 
  * @Date: 2017-12-01 15:12:15 
  * @Last Modified by: Simple
- * @Last Modified time: 2017-12-19 17:35:41
+ * @Last Modified time: 2018-02-09 16:44:13
  */
 
 const fs = require('fs');
@@ -12,7 +12,7 @@ const mkdirp = require('mkdirp');
 
 module.exports = class AssetManifest {
 	constructor(options) {
-		this.options = { 
+		this.options = {
 			...AssetManifest.defaults,
 			...options,
 		}
@@ -44,6 +44,7 @@ module.exports = class AssetManifest {
 						}
 
 						const exts = /.+\.([^\.]+$)/.exec(file)[1]
+						debugger;
 						manifest[`${chunk.name}/${exts}`] = '/src/' + file;
 					})
 				} else {
