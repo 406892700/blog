@@ -3,7 +3,7 @@
  * @Author: Simple 
  * @Date: 2017-12-01 15:12:15 
  * @Last Modified by: Simple
- * @Last Modified time: 2018-02-09 16:44:13
+ * @Last Modified time: 2018-02-12 10:25:55
  */
 
 const fs = require('fs');
@@ -44,7 +44,6 @@ module.exports = class AssetManifest {
 						}
 
 						const exts = /.+\.([^\.]+$)/.exec(file)[1]
-						debugger;
 						manifest[`${chunk.name}/${exts}`] = '/src/' + file;
 					})
 				} else {

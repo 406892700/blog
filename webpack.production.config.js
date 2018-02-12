@@ -15,7 +15,7 @@ const devConfig = {
     output: {
         path: path.resolve(__dirname, 'dist/client/src'),
         filename: '[name].bundle.[chunkhash].js',
-        chunkFilename: 'src/[name].bundle.[chunkhash].js',
+        chunkFilename: '../[name].bundle.[chunkhash].js',
         publicPath: '/'
     },
     // 匹配规则

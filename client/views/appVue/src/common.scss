@@ -72,7 +72,7 @@ a {
 /* 主内容区容器 */
 .app-container{
   position: absolute;
-  top: 70px;
+  top: 65px;
   bottom: 10px;
   width: 100%;
   left: 0;
@@ -98,8 +98,8 @@ a {
   top: 0;
   bottom: 0;
   background-color: #fff;
-  border-left: 20px solid #f1f1f1;
-  border-right: 20px solid #f1f1f1;
+  border-left: 10px solid #f1f1f1;
+  border-right: 10px solid #f1f1f1;
   overflow-y: scroll;
 }
 
