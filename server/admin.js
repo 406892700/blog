@@ -6,17 +6,17 @@ const service = require('./service/service');
  * @Author: Simple
  * @Date: 2018-02-08 16:54:24
  * @Last Modified by: Simple
- * @Last Modified time: 2018-02-08 17:51:41
+ * @Last Modified time: 2018-02-13 11:36:34
  */
 
 const express = require('express');
 const router = express.Router();
 
-router.get('/getArticleList', (req, res, next) => {
-    const page = req.query.page || 1;
-    const pageSize = req.query.pageSize || 5;
+router.post('/getArticleList', (req, res, next) => {
+    const pageNum = req.body.pageNum || 1;
+    const pageSize = req.body.pageSize || 5;
 
-    service.getArticleList(page, pageSize, (result, total) => {
+    service.getArticleList(pageNum, pageSize, (result, total) => {
         const list = result.map((item) => {
             return {
                 ...item,
@@ -31,8 +31,10 @@ router.get('/getArticleList', (req, res, next) => {
             code: '200',
             result: {
                 list,
+                total,
                 totalPage,
                 pageSize,
+                pageNum
             },
             msg: ''
         });

@@ -70,7 +70,8 @@ module.exports = (app) => {
     app.use('/api', require('./admin'));
     app.use((error, req, res, next) => {
         res.json({
-            msg: '错啦！'
+            code: '500',
+            errmsg: '错啦！'
         });
     });
 

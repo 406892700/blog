@@ -1,4 +1,5 @@
 import axios from 'axios';
+import QS from 'querystring';
 import {
     Message
 } from 'element-ui';
@@ -6,11 +7,15 @@ import {
 
 // 创建axios实例
 const service = axios.create({
-    baseURL: '/manage', // api的base_url
+    baseURL: '/api', // api的base_url
     timeout: 5000, // 请求超时时间
     headers: {
-        'Content-Type': 'application/json'
-    }
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    transformRequest: [function (data, headers) {
+        // Do whatever you want to transform the data
+        return QS.stringify(data);
+    }],
 });
 
 // request拦截器

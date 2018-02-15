@@ -56,7 +56,10 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "axios": "0.16.2",
+    "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
+    "element-ui": "^1.4.6",
     "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.3.1",
@@ -73,8 +76,6 @@
     "underscore": "^1.8.3",
     "vue": "^2.3.3",
     "vue-router": "^2.3.1",
-    "vuex": "^2.3.1",
-    "element-ui": "^1.4.6",
-    "axios": "0.16.2"
+    "vuex": "^2.3.1"
   }
 }

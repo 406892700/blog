@@ -4,8 +4,13 @@ const express = require('express');
 const path = require('path');
 const mixin = require('./server/tool/mixin');
 const config = require('./config/config');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+// 添加json解析
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 const App = require('./server/index')(app);
 
 const isDev = process.env.NODE_ENV !== 'production';

@@ -8,15 +8,10 @@
             "type": "node",
             "request": "launch",
             "name": "启动程序",
-            "program": "${workspaceFolder}/node_modules/webpack/bin/webpack",
+            "program": "${workspaceFolder}/app.js",
             "env": {
-                "NODE_ENV": "production"
-            },
-            "args": [
-                "--progress",
-                "--config",
-                "webpack.production.config.js"
-            ]
+                "NODE_ENV": "development"
+            }
         }
     ]
 }
