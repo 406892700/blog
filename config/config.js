@@ -14,3 +14,5 @@ module.exports =  {
     framework: 'vue', // 选择框架 react vue
     $CFG,
 };
+
+
