@@ -3,7 +3,7 @@
  * @Author: Simple
  * @Date: 2017-11-14 11:16:00
  * @Last Modified by: Simple
- * @Last Modified time: 2017-12-18 09:56:43
+ * @Last Modified time: 2018-04-12 23:41:55
  */
 
 import $ from 'jquery';
@@ -88,8 +88,7 @@ class YAjax extends Event {
         };
 
         if (config.type.toLowerCase() === 'post') {
-            const encryptMapper 
-            = ['loginPwd', 'reLoginPwd', 'mobile', 'userName', 'realName', 'idNumber', 'payPwd', 'rePayPwd', 'oldPwd', 'cardNo', 'reLoginPwd', 'oldPayPwd'];
+            const encryptMapper = ['loginPwd', 'reLoginPwd', 'mobile', 'userName', 'realName', 'idNumber', 'payPwd', 'rePayPwd', 'oldPwd', 'cardNo', 'reLoginPwd', 'oldPayPwd'];
 
             config.data = config.data || {};
             Object.keys(config.data).forEach((item) => {

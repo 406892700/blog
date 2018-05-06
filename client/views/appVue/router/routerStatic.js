@@ -11,6 +11,12 @@ export default [
             component: resolve => require(['../pages/index/Index'], resolve)
         }]
     },
+
+    {
+        path: '/demo',
+        name: 'demo',
+        component: resolve => require(['../pages/demo/Demo'], resolve) 
+    }
     // {
     //     path: '/login',
     //     name: 'login',
