@@ -1,11 +1,11 @@
 {
-  "appVue/index/js": "/appVue/index.bundle.fc8581.js",
-  "app/detail/index/js": "/app/detail/index.bundle.fc8581.js",
-  "appReact/index/js": "/appReact/index.bundle.fc8581.js",
-  "appVue/store/modules/index/js": "/appVue/store/modules/index.bundle.fc8581.js",
-  "appReact/app/reducers/index/js": "/appReact/app/reducers/index.bundle.fc8581.js",
-  "app/index/index/js": "/app/index/index.bundle.fc8581.js",
-  "appVue/store/index/js": "/appVue/store/index.bundle.fc8581.js",
-  "app/list/index/js": "/app/list/index.bundle.fc8581.js",
-  "app/gallery/index/js": "/app/gallery/index.bundle.fc8581.js"
+  "appVue/index/js": "/appVue/index.bundle.8b7df2.js",
+  "app/detail/index/js": "/app/detail/index.bundle.8b7df2.js",
+  "appReact/index/js": "/appReact/index.bundle.8b7df2.js",
+  "appVue/store/modules/index/js": "/appVue/store/modules/index.bundle.8b7df2.js",
+  "appReact/app/reducers/index/js": "/appReact/app/reducers/index.bundle.8b7df2.js",
+  "app/index/index/js": "/app/index/index.bundle.8b7df2.js",
+  "appVue/store/index/js": "/appVue/store/index.bundle.8b7df2.js",
+  "app/list/index/js": "/app/list/index.bundle.8b7df2.js",
+  "app/gallery/index/js": "/app/gallery/index.bundle.8b7df2.js"
 }

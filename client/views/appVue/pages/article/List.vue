@@ -1,5 +1,8 @@
 <template>
   <div class="b">
+    <div class="app-list-bar">
+      <el-button type="default" @click="openDialog('add')">新增</el-button>
+    </div>
     <list-grid  :args="{}" :url="'/getArticleList'" ref="dataList">
       <template slot="list" scope="props">
         <div class="list">
@@ -15,13 +18,20 @@
             </el-table-column>
             <el-table-column label="操作" width="190" fixed="right">
               <template scope="scope">
-                <el-button type="default" class="fl" size="small" @click="openFormDialog('edit', scope.row)">编辑</el-button>
+                <el-button type="default" class="fl" size="small" @click="openDialog('edit', scope.row)">编辑</el-button>
               </template>
             </el-table-column>
           </el-table>
         </div>
       </template>
     </list-grid>
+    <article-list-dialog 
+      :visible.sync="visibleFormDialog" 
+      v-if="visibleFormDialog" 
+      :dialogType="dialogType" 
+      :typeList="typeList" 
+      :args="args" 
+      @success="signSuccess"/>
   </div>
 </template>
 <script>
@@ -29,28 +39,16 @@
  * 版权信息
  */
 import listGrid from '../../components/ListGrid/ListGrid';
+import ArticleListDialog from './ArticleListDialog';
 export default {
   name: 'list',
   data() {
     return {
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
-      }
+        visibleFormDialog: false,
+        dialogType: '编辑',
+        typeList: [],
+        args: {},
+    }
   },
   created(){
   },
@@ -58,7 +56,8 @@ export default {
   props: [],
 
   components: {
-    listGrid
+    listGrid,
+    ArticleListDialog
   },
 
   computed: {
@@ -68,15 +67,21 @@ export default {
   filters:{
     translateState(value){
       return {
-        '0': '正常',
-        '1': '不可见'
+        '1': '正常',
+        '2': '不可见'
       }[value]
     }
   },
 
 
   methods: {
-    
+    signSuccess() {
+      console.log('弹窗关闭');
+    },
+    openDialog(type) {
+      this.dialogType = type;
+      this.visibleFormDialog = true;
+    }
   }
 }
 </script>

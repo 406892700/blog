@@ -1,9 +1,11 @@
 import './index.scss';
+import 'github-markdown-css';
 import '@/common/common';
 import $ from 'jquery';
 import T from '@/libs/tool';
 import getCommentTpl from './commentTpl.html';
 import moment from 'moment';
+import { markdown } from 'markdown';
 
 const id = /\/([^\/]+)$/.exec(location.pathname)[1]; // id
 /**
@@ -55,10 +57,28 @@ const bindEvent = () => {
     });
 };
 
+/**
+ * 初始化评论输入框
+ */
+const initCommentInput = () => {
+    const $wrap = $('#commentWrap');
+    const $input = $wrap.find('#commentInput');
+    const $preview = $wrap.find('#commentPreview');
+    $input.on('input', () => {
+        const fakeData = {
+            content: markdown.toHTML($input.val()),
+            add_time: moment(new Date()).format('YYYY-MM-DD hh:mm:ss'),
+            index: 'new'
+        };
+        $preview.html(getCommentTpl({ list: [fakeData] }));
+    });
+};
+
 $(() => {
     // T.Confirm(222);
     renderComments(id);
     bindEvent();
+    initCommentInput();
 });
 
 // hmr
