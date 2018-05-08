@@ -68,6 +68,15 @@ const getCommentsListByAid = (id, page, pageSize, callback) => {
     });
 };
 
+/**
+ * 
+ * @param {文章对象} article 
+ * @param {*} callback 
+ */
+const insertArticle = (article, callback) => {
+
+};
+
 module.exports = {
     getArticleList,
     getArticleDetail,
