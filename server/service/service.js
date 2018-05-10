@@ -18,7 +18,6 @@ const getArticleList = (page, pageSize, callback) => {
                 throw result1[0] || result2[0];
             } else {
                 callback(result2[1], result1[1][0].total);
-                
             }
 
         });
@@ -55,8 +54,8 @@ const getArticleDetail = (id, callback) => {
 const getCommentsListByAid = (id, page, pageSize, callback) => {
     pool().then((connection) => {
         ASYNC(function *gen(cb) {
-            const result1 = yield connection.query(`select count(*) as total from t_comment where aId = ${id}`, cb);
-            const result2 = yield connection.query(`select * from t_comment where aId = ${id} LIMIT ${pageSize} OFFSET ${(page-1)*pageSize}`, cb);
+            const result1 = yield connection.query(`select count(*) as total from t_comment where a_id = ${id}`, cb);
+            const result2 = yield connection.query(`select * from t_comment where a_id = ${id} LIMIT ${pageSize} OFFSET ${(page-1)*pageSize}`, cb);
         
             connection.release();
 
@@ -67,6 +66,15 @@ const getCommentsListByAid = (id, page, pageSize, callback) => {
             }
         });
     });
+};
+
+/**
+ * 
+ * @param {文章对象} article 
+ * @param {*} callback 
+ */
+const insertArticle = (article, callback) => {
+
 };
 
 module.exports = {

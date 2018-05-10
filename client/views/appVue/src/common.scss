@@ -118,6 +118,7 @@ a {
 }
 
 .app-list-bar{
+  margin-bottom: 15px;
 }
 
 .app-list-table{
@@ -168,3 +169,34 @@ a {
 .app-form-section .app-form-item.combine{
   padding-left: 20px;
 }
+
+.icon-ctrl-screen{
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position:  0 0;
+  background-size: 16px 16px;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+
+.icon-ctrl-screen{
+  background-image: url(./images/fullScreen-normal.png);
+}
+
+.icon-ctrl-screen:hover{
+  background-image: url(./images/fullScreen-hover.png);
+}
+
+.icon-ctrl-screen.min{
+  background-image: url(./images/minScreen-normal.png);
+}
+
+.icon-ctrl-screen.min:hover{
+  background-image: url(./images/minScreen-hover.png);
+}
+.el-table__expanded-cell{
+  padding: 0 0 0 0px !important;
+}
+

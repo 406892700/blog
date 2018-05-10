@@ -4,7 +4,7 @@
       <el-col :span="24">
         <div class="app-top-bar">
           <el-menu theme="dark" class="el-menu-demo" mode="horizontal" :router="false">
-            <el-col :span="4">&nbsp;</el-col>
+            <el-col :span="4"><img src="/static/images/logo.png" alt="" width="100%" height="100%"></el-col>
             <el-col :span="20">
               <el-menu-item index="/index">首页</el-menu-item>
 
@@ -102,7 +102,7 @@ export default {
         }
       }).catch(err=>{
         this.clearTabs();
-        this.$router.push({path: '/index'})
+        this.$router.push({path: '/index'});
       });
 
     },

@@ -24,7 +24,7 @@
         }
     }
 
-    .SIMPLE-comment {
+    .SIMPLE-comment, .SIMPLE-comment-wrap {
         border-top: 1px solid #eee;
         margin-top: 40px;
 
@@ -89,6 +89,39 @@
                 font-size: 30px;
                 color: #999;
                 // float: right;
+            }
+        }
+    }
+
+    .SIMPLE-comment-wrap {
+        .comment-input textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            height: 200px;
+            font-size: 14px;
+        }
+
+        .comment-preview {
+            text-align: left;
+        }
+
+        .comment-submit {
+            .btn {
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+                background-color: #ff6600;
+                color: #fff;
+                padding: 5px 20px;
+                font-size: 14px;
+                border-radius: 5px;
+
+                &.disabled {
+                    background-color: #ddd;
+                }
             }
         }
     }

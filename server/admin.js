@@ -6,7 +6,7 @@ const service = require('./service/service');
  * @Author: Simple
  * @Date: 2018-02-08 16:54:24
  * @Last Modified by: Simple
- * @Last Modified time: 2018-02-13 11:36:34
+ * @Last Modified time: 2018-05-08 17:16:37
  */
 
 const express = require('express');
@@ -21,7 +21,8 @@ router.post('/getArticleList', (req, res, next) => {
             return {
                 ...item,
                 coversArr: item.covers.split(',').slice(0, 3),
-                add_time: moment(item.add_time).format('YYYY-MM-DD HH:mm:ss')
+                add_time: moment(item.add_time).format('YYYY-MM-DD HH:mm:ss'),
+                modify_time: moment(item.modify_time).format('YYYY-MM-DD HH:mm:ss')
             };
         });
 
